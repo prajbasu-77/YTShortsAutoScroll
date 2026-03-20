@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; }
+    body { width: 240px; background: #0f0f0f; color: #fff; padding: 16px; }
+    h2 { font-size: 15px; color: #ff0000; margin-bottom: 4px; letter-spacing: 0.5px; }
+    p { font-size: 11px; color: #aaa; margin-bottom: 14px; }
+    .row { display: flex; align-items: center; justify-content: space-between; }
+    .label { font-size: 13px; color: #eee; }
+    .toggle { position: relative; width: 44px; height: 24px; }
+    .toggle input { opacity: 0; width: 0; height: 0; }
+    .slider {
+      position: absolute; inset: 0; background: #444;
+      border-radius: 24px; cursor: pointer; transition: 0.3s;
+    }
+    .slider:before {
+      content: ""; position: absolute; width: 18px; height: 18px;
+      left: 3px; bottom: 3px; background: white;
+      border-radius: 50%; transition: 0.3s;
+    }
+    input:checked + .slider { background: #ff0000; }
+    input:checked + .slider:before { transform: translateX(20px); }
+    .status { margin-top: 12px; font-size: 11px; color: #888; text-align: center; }
+  </style>
+</head>
+<body>
+  <h2>▶ YT Shorts Auto Scroll</h2>
+  <p>Automatically skip to the next Short when one ends.</p>
+  <div class="row">
+    <span class="label">Auto Scroll</span>
+    <label class="toggle">
+      <input type="checkbox" id="toggle" checked>
+      <span class="slider"></span>
+    </label>
+  </div>
+  <div class="status" id="status">✅ Active on YouTube Shorts</div>
+  <script src="popup.js"></script>
+</body>
+</html>

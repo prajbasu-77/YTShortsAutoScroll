@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "YT Shorts Auto Scroll",
+  "version": "1.0",
+  "description": "Automatically scrolls to the next YouTube Short when the current one ends.",
+  "permissions": ["activeTab", "scripting", "storage"],
+  "host_permissions": ["https://www.youtube.com/*"],
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/shorts/*"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "48": "icons/icon48.png"
+    }
+  }
+}
